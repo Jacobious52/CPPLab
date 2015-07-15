@@ -12,6 +12,8 @@
 /**
  * @brief Base Class for Serializable objects
  * @details Derive and override pack and unpack
+ *          Used mainly for single class saving
+ *          For bundling many classes use BackPack
  */
 class Packable
 {
