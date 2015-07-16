@@ -76,7 +76,7 @@ private:
  * @brief Check if level has access
  *
  * @param level level to use
- * @return wheather level can be used of not
+ * @return if level has privileges
  */
 static inline bool _has_level(LogType level)
 {
