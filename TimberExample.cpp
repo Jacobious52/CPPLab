@@ -11,6 +11,7 @@ int main(int argc, char const *argv[])
     Tim::logf(Tim::kINFO, "Hello %s", "World");
     Tim::log(Tim::kERROR, "omg this happend");
     Tim::trace(T_KERROR, "yes no", TRACE);
+
     // lazy people way (macros)
 
     TSETL(T_KWARNING)
