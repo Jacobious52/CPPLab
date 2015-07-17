@@ -5,21 +5,27 @@
 
 int main(int argc, char const *argv[])
 {
-    Tim::set_log_level(Tim::kDEBUG);
+    Tim::set_log_level(Tim::kALL);
     Tim::osx_notification("Hello", "This is a test");
 
     Tim::logf(Tim::kINFO, "Hello %s", "World");
-    Tim::log(Tim::kERROR, "omg this happend");
-    Tim::trace(T_KERROR, "yes no", TRACE);
+    Tim::log(Tim::kWARNING, "omg this happend");
+    Tim::trace(T_KWARNING, "yes no", TRACE);
+
+
+    Tim::assert(1==2, TRACE);
+    Tim::assert(2==2, TRACE);
 
     // lazy people way (macros)
 
-    TSETL(T_KWARNING)
-    TLOG(T_KWARNING, "hello")
-    TLOG(T_KINFO, "not seen")
-    TLOGF(T_KWARNING, "y %s", "n")
+    TSETL(T_KALL);
+    TLOG(T_KINFO, "hello");
+    TLOGF(T_KINFO, "y %s", "n");
 
-    TTRACE(T_KERROR, "omg no")
+    TTRACE(T_KINFO, "omg no");
+
+    TASSERT(1<3);
+    TASSERT(5==3);
 
     return 0;
 }
