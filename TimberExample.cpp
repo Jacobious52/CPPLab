@@ -16,11 +16,18 @@ int main(int argc, char const *argv[])
     Tim::assert(1==2, TRACE);
     Tim::assert(2==2, TRACE);
 
+    printf("PRINTER@@@\n");
+
     // lazy people way (macros)
 
     TSETL(T_KALL);
     TLOG(T_KINFO, "hello");
     TLOGF(T_KINFO, "y %s", "n");
+
+    printf("BLAHBTBFB\n");
+
+    TERROR("Errorrrrr");
+    TINFO("INFO");
 
     TTRACE(T_KINFO, "omg no");
 

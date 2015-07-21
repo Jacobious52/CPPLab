@@ -16,6 +16,8 @@
  */
 #ifdef TIMBER_MACROS
 #define TLOG(__LEVEL__, __STR__) Tim::log((__LEVEL__), (__STR__))
+#define TERROR(__STR__) Tim::log((Tim::kERROR), (__STR__))
+#define TINFO(__STR__) Tim::log((Tim::kINFO), (__STR__))
 #define TLOGF(__LEVEL__, __STR__, args...) Tim::logf((__LEVEL__), (__STR__), (args))
 #define TSETL(__LEVEL__) Tim::set_log_level((__LEVEL__))
 #define TTRACE(__LEVEL__, __STR__) Tim::trace((__LEVEL__), (__STR__), (__FILENAME__), (__FUNCTION__), (__LINE__))
