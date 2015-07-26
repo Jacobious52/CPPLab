@@ -10,27 +10,27 @@
 
 /**
  * @brief macros for timber commands
- * @details allows lazy people to ignore Tim:: namespace
+ * @details allows lazy people to ignore tim:: namespace
  * @usage for macros to be enabled #define TIMBER_MACROS must
  *        be called BEFORE you include "Timber.h"
  */
 #ifdef TIMBER_MACROS
-#define TLOG(__LEVEL__, __STR__) Tim::log((__LEVEL__), (__STR__))
-#define TERROR(__STR__) Tim::log((Tim::kERROR), (__STR__))
-#define TINFO(__STR__) Tim::log((Tim::kINFO), (__STR__))
-#define TLOGF(__LEVEL__, __STR__, args...) Tim::logf((__LEVEL__), (__STR__), (args))
-#define TSETL(__LEVEL__) Tim::set_log_level((__LEVEL__))
-#define TTRACE(__LEVEL__, __STR__) Tim::trace((__LEVEL__), (__STR__), (__FILENAME__), (__FUNCTION__), (__LINE__))
-#define TASSERT(__PARAM__) Tim::assert((__PARAM__), (__FILENAME__), (__FUNCTION__), (__LINE__))
-#define T_KNONE Tim::kNONE
-#define T_KERROR Tim::kERROR
-#define T_KWARNING Tim::kWARNING
-#define T_KINFO Tim::kINFO
-#define T_KDEBUG Tim::kDEBUG
-#define T_KALL Tim::kALL
+#define TLOG(__LEVEL__, __STR__) tim::log((__LEVEL__), (__STR__))
+#define TERROR(__STR__) tim::log((tim::kERROR), (__STR__))
+#define TINFO(__STR__) tim::log((tim::kINFO), (__STR__))
+#define TLOGF(__LEVEL__, __STR__, args...) tim::logf((__LEVEL__), (__STR__), (args))
+#define TSETL(__LEVEL__) tim::set_log_level((__LEVEL__))
+#define TTRACE(__LEVEL__, __STR__) tim::trace((__LEVEL__), (__STR__), (__FILENAME__), (__FUNCTION__), (__LINE__))
+#define TCHECK(__PARAM__) tim::check((__PARAM__), (__FILENAME__), (__FUNCTION__), (__LINE__))
+#define T_KNONE tim::kNONE
+#define T_KERROR tim::kERROR
+#define T_KWARNING tim::kWARNING
+#define T_KINFO tim::kINFO
+#define T_KDEBUG tim::kDEBUG
+#define T_KALL tim::kALL
 #endif
 
-namespace Tim
+namespace tim
 {
 
 /**
@@ -177,7 +177,7 @@ static inline void set_log_level(LogType level)
     logf(kDEBUG, "Log level set to [%s]", _level_to_str(level));
 }
 
-static inline bool assert(bool param, const char *file, const char *func, int line)
+static inline bool check(bool param, const char *file, const char *func, int line)
 {
     if (!param)
     {
@@ -209,6 +209,6 @@ static inline void osx_notification(const char *subtitle, const char *message)
     }
 }
 
-}  // namespace Tim
+}  // namespace tim
 
 #endif  // TIMBER_H

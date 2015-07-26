@@ -5,16 +5,16 @@
 
 int main(int argc, char const *argv[])
 {
-    Tim::set_log_level(Tim::kALL);
-    Tim::osx_notification("Hello", "This is a test");
+    tim::set_log_level(tim::kALL);
+    tim::osx_notification("Hello", "This is a test");
 
-    Tim::logf(Tim::kINFO, "Hello %s", "World");
-    Tim::log(Tim::kWARNING, "omg this happend");
-    Tim::trace(T_KWARNING, "yes no", TRACE);
+    tim::logf(tim::kINFO, "Hello %s", "World");
+    tim::log(tim::kWARNING, "omg this happend");
+    tim::trace(T_KWARNING, "yes no", TRACE);
 
 
-    Tim::assert(1==2, TRACE);
-    Tim::assert(2==2, TRACE);
+    tim::check(1==2, TRACE);
+    tim::check(2==2, TRACE);
 
     printf("PRINTER@@@\n");
 
@@ -31,8 +31,8 @@ int main(int argc, char const *argv[])
 
     TTRACE(T_KINFO, "omg no");
 
-    TASSERT(1<3);
-    TASSERT(5==3);
+    TCHECK(1<3);
+    TCHECK(5==3);
 
     return 0;
 }
