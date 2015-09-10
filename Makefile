@@ -36,4 +36,4 @@ run:
 
 # purge all the things
 clean:
-	rm -rf $(OBJECTS) $(EXE)
+	rm -f $(OBJECTS) $(EXE)
