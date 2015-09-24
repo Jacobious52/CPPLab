@@ -1,0 +1,8 @@
+class Sort
+    + _array : int*
+    ___
+    +! sort (int*) : int*
+    + operator (int*) : int*
+
+class QuickSort -> Sort
+    + sort (int*) : int*
